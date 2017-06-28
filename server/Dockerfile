@@ -14,6 +14,6 @@ ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION
 # Finally Adding Jmeter to the Path
 ENV PATH $JMETER_HOME/bin:$PATH
 COPY ./plugins/lib $JMETER_HOME/lib
-EXPOSE 1099 60000 9270
-ENTRYPOINT ["jmeter-server","-Jserver.rmi.localport=60000"]
+EXPOSE 1099 9270
+ENTRYPOINT jmeter-server -Djava.rmi.server.hostname=$HOST_IP
 
