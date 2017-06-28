@@ -1,0 +1,12 @@
+version: '2' 
+
+services:
+ jmeter-server:
+    image: giovannipaologibilisco/jmeter:server
+    container_name: jmeter
+    volumes:
+      - ./data/:/tmp/data/
+    ports:
+      - 9270:9270
+      - 60000:60000
+      - 1099:1099
