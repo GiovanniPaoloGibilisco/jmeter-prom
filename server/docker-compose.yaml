@@ -2,7 +2,7 @@ version: '2'
 
 services:
  jmeter-server:
-    image: giovannipaologibilisco/jmeter:server
+    image: giovannipaologibilisco/jmeter-prom:server
     container_name: jmeter
     volumes:
       - ./data/:/tmp/data/
