@@ -15,4 +15,4 @@ ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION
 ENV PATH $JMETER_HOME/bin:$PATH
 COPY ./plugins/lib $JMETER_HOME/lib
 EXPOSE 1099 60000 9270
-ENTRYPOINT jmeter -n -t /tmp/data/$SCRIPT_NAME -R $REMOTE_SERVERS -Djava.rmi.server.hostname=$HOST_IP
+ENTRYPOINT jmeter -n -t /tmp/data/$SCRIPT_NAME -R $REMOTE_SERVERS -Djava.rmi.server.hostname=$HOST_IP -Jurl=$SERVER_IP
