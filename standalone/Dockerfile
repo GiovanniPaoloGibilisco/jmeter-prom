@@ -15,4 +15,5 @@ ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION
 ENV PATH $JMETER_HOME/bin:$PATH
 COPY ./plugins/lib $JMETER_HOME/lib
 EXPOSE 1099 60000 9270
-ENTRYPOINT jmeter -n -t /tmp/data/$SCRIPT_NAME -Djava.rmi.server.hostname=$HOST_IP -Jurl=$SERVER_IP
+ENTRYPOINT jmeter -n -t /tmp/data/$SCRIPT_NAME -Djava.rmi.server.hostname=$HOST_IP -Jurl=$SERVER_IP -Jusers=$USERS -Jramp_time=$RAMP_TIME \
+	-Jramp_steps=$RAMP_STEPS -Jhold=$HOLD -Jdelay=$DELAY -Jlambda=$LAMBDA
